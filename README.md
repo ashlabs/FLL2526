@@ -301,14 +301,3 @@ The goal of this repository is to help the team build:
 - testable design decisions
 - clean, maintainable code throughout the season
 
----
-
-## Next Improvements
-
-Some good next steps for this repository:
-- add a shared gyro drive module
-- add a calibration script
-- add a mission launcher
-- add attachment test harnesses
-- add logging and debugging utilities
-- add a standard experiment scoring sheet
