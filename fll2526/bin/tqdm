@@ -1,0 +1,6 @@
+#!/Users/ashlabs/Projects/FLL/2526/fll2526/bin/python
+import sys
+from tqdm.cli import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())
