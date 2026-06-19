@@ -6,7 +6,10 @@ from pybricks.tools import wait
 from missions.mission1 import run as mission1
 from missions.mission2 import run as mission2
 
-from robot import Sounds
+from robot.Sounds import(
+    play_program_start_ding_dong,
+    play_program_end_ding_dong
+)
 
 
 MENU_OPTIONS = [
@@ -70,9 +73,9 @@ def choose_menu_option():
 def run_selected_mission(mission_function):
     hub.display.text("GO?")
     wait_for_center_button()
-    Sounds.play_program_start_ding_dong()
+    play_program_start_ding_dong()
     mission_function()
-    Sounds.play_program_end_ding_dong()
+    play_program_end_ding_dong()
 
 def main():
     hub.speaker.beep()

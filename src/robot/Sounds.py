@@ -62,6 +62,6 @@ def play_default_error_ding_dong():
     wait(200)
     speaker.beep(660, 236)
 
-def play_note_array(, note_array : list[tuple[int, int]] = [(0, 0)]):
+def play_note_array(note_array : list[tuple[int, int]] = [(0, 0)]):
     for note in note_array:
         speaker.beep(note[0], note[1])
