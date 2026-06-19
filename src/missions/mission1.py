@@ -19,22 +19,29 @@ from robot.Sounds import(
     play_handoff_to_nav_code_ding_dong
 )
 
-STRAIGHT_AMOUNT = 1000
-TURN_AMOUNT = 100
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Button
+
+STRAIGHT_AMOUNT = 900
+TURN_AMOUNT = 200
+SMALL_MOVE = 100
+NUM_RUNS = 3
 
 def run():
-    for i in range(100):
+    for i in range(NUM_RUNS):
         print(f"Run {i} start")
         play_handoff_to_mission_code_ding_dong()
         drive_backward(STRAIGHT_AMOUNT)
         play_handoff_to_nav_code_ding_dong()
-        turn_left(TURN_AMOUNT)
+        turn_left(TURN_AMOUNT/2)
+        drive_backward(SMALL_MOVE)
+        turn_left(TURN_AMOUNT/2)
         play_handoff_to_mission_code_ding_dong()
         drive_backward(STRAIGHT_AMOUNT)
-        Sounds.play_handoff_to_nav_code_ding_dong()
-        turn_right(TURN_AMOUNT)
+        play_handoff_to_nav_code_ding_dong()
+        turn_right(TURN_AMOUNT/2)
+        drive_backward(SMALL_MOVE)
+        turn_right(TURN_AMOUNT/2)
         print(f"Run {i} done")
-    
-if __name__ == "__main__":
-    import main
-    main.main()
+    turn_left(TURN_AMOUNT/2)
+    drive_forward(SMALL_MOVE*NUM_RUNS)

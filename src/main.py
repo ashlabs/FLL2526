@@ -1,5 +1,5 @@
 from pybricks.hubs import PrimeHub
-from pybricks.parameters import Button
+from pybricks.parameters import Button, Color
 from pybricks.tools import wait
 
 # Mission imports
@@ -8,7 +8,8 @@ from missions.mission2 import run as mission2
 
 from robot.Sounds import(
     play_program_start_ding_dong,
-    play_program_end_ding_dong
+    play_program_end_ding_dong,
+    play_robot_ready_ding_dong
 )
 
 
@@ -71,14 +72,21 @@ def choose_menu_option():
         wait(10)
 
 def run_selected_mission(mission_function):
+    hub.light.on(Color.RED)
     hub.display.text("GO?")
     wait_for_center_button()
+    hub.light.on(Color.GREEN)
     play_program_start_ding_dong()
+    wait(10)
     mission_function()
+    wait(10)
     play_program_end_ding_dong()
+    hub.light.on(Color.BLUE)
 
 def main():
-    hub.speaker.beep()
+    play_robot_ready_ding_dong()
+    hub.light.on(Color.BLUE)
+    print("Robot is Ready")
 
     while True:
         selected_index = choose_menu_option()
