@@ -132,6 +132,7 @@ def runCountdown(length : int = 10, warning : int = 3):
         if i == warning:
             HUB.light.on(Color.ORANGE)
             play_robot_about_to_move_ding_dong()
+        wait(1000)
     HUB.light.on(Color.GREEN)
     play_robot_moving_ding_dong()
 
