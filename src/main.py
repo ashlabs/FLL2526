@@ -25,9 +25,11 @@ hub = PrimeHub()
 hub.system.set_stop_button(Button.BLUETOOTH)
 
 def wait_for_center_button():
+    hub.light.on(Color.RED)
     while Button.CENTER not in hub.buttons.pressed():
         wait(10)
 
+    hub.light.on(Color.GREEN)
     while Button.CENTER in hub.buttons.pressed():
         wait(10)
 
