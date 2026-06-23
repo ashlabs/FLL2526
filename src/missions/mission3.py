@@ -34,6 +34,8 @@ NUM_RUNS = 3
 
 HUB = PrimeHub()
 
+HANDOFF_SOUND = False
+
 def run():
     play_robot_moving_ding_dong()
     enable_gyro()
@@ -58,15 +60,19 @@ def collect():
     for i in range(NUM_RUNS):
         HUB.display.number(i + 1)
         print(f"Run {i + 1} start")
-        play_handoff_to_mission_code_ding_dong()
+        if HANDOFF_SOUND:
+            play_handoff_to_mission_code_ding_dong()
         drive_backward(STRAIGHT_AMOUNT)
-        play_handoff_to_nav_code_ding_dong()
+        if HANDOFF_SOUND:
+            play_handoff_to_nav_code_ding_dong()
         turn_left(TURN_AMOUNT/2)
         drive_backward(SMALL_MOVE)
         turn_left(TURN_AMOUNT/2)
-        play_handoff_to_mission_code_ding_dong()
+        if HANDOFF_SOUND:
+            play_handoff_to_mission_code_ding_dong()
         drive_backward(STRAIGHT_AMOUNT)
-        play_handoff_to_nav_code_ding_dong()
+        if HANDOFF_SOUND:
+            play_handoff_to_nav_code_ding_dong()
         turn_right(TURN_AMOUNT/2)
         drive_backward(SMALL_MOVE)
         turn_right(TURN_AMOUNT/2)
@@ -76,9 +82,11 @@ def collect():
     turn_right(TURN_AMOUNT/2)
 
 def deliver():
-    play_handoff_to_mission_code_ding_dong()
+    if HANDOFF_SOUND:
+        play_handoff_to_mission_code_ding_dong()
     drive_backward(STRAIGHT_AMOUNT)
-    play_handoff_to_nav_code_ding_dong()
+    if HANDOFF_SOUND:
+        play_handoff_to_nav_code_ding_dong()
     drive_forward(STRAIGHT_AMOUNT)
 
 def waitForButton(button : Button = Button.CENTER):
