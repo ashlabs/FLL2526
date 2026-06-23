@@ -5,6 +5,7 @@ from pybricks.tools import wait
 # Mission imports
 from missions.mission1 import run as mission1
 from missions.mission2 import run as mission2
+from missions.mission3 import run as mission3
 
 from robot.Sounds import(
     play_program_start_ding_dong,
@@ -16,6 +17,7 @@ from robot.Sounds import(
 MENU_OPTIONS = [
     ("1",mission1),
     ("2", mission2),
+    ("3", mission3),
     ("E", None)
 ]
 
@@ -35,7 +37,7 @@ def wait_for_center_button():
 
     wait(250)
 
-def wait_for_button_release(button):
+def wait_for_button_release(button : Button):
     while button in hub.buttons.pressed():
         wait(10)
 
