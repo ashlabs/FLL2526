@@ -58,3 +58,9 @@ def turn_left(angle_deg):
     apply_default_drive_settings()
     drive_base.turn(-angle_deg)
     drive_base.stop()
+
+def enable_gyro():
+    drive_base.use_gyro(True)
+
+def disable_gyro():
+    drive_base.use_gyro(False)

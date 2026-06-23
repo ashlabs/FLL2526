@@ -21,6 +21,7 @@ MENU_OPTIONS = [
     ("E", None)
 ]
 
+VOLUME = 10
 
 hub = PrimeHub()
 
@@ -88,6 +89,7 @@ def run_selected_mission(mission_function):
     hub.light.on(Color.BLUE)
 
 def main():
+    hub.speaker.volume(VOLUME)
     play_robot_ready_ding_dong()
     hub.light.on(Color.BLUE)
     print("Robot is Ready")
