@@ -37,6 +37,7 @@ HUB = PrimeHub()
 HANDOFF_SOUND = False
 
 def run():
+    runCountdown(5, 3)
     play_robot_moving_ding_dong()
     enable_gyro()
     collect()
