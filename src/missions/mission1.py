@@ -31,7 +31,7 @@ from pybricks.parameters import Button, Color
 from pybricks.tools import wait, Matrix
 
 STRAIGHT_AMOUNT = 900
-TURN_AMOUNT = 195
+TURN_AMOUNT = 200
 SMALL_MOVE = 100
 NUM_RUNS = 3
 
