@@ -131,7 +131,7 @@ def waitForButton(button : Button = Button.CENTER):
         HUB.display.icon(Matrix([
                 [0, 0, 0, 0, 0],
                 [0, 255, 255, 255, 0],
-                [0, 255, 255, 255, 0],
+                [0, 255, 0, 255, 0],
                 [0, 255, 255, 255, 0],
                 [0, 0, 0, 0, 0]]))
     elif button == Button.LEFT:
