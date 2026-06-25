@@ -4,7 +4,10 @@ from robot.drive import(
     turn_left,
     turn_right,
     enable_gyro,
-    disable_gyro
+    disable_gyro,
+    reset_drive_state,
+    apply_default_drive_settings,
+    apply_fast_drive_settings
 )
 
 from robot.arms import(
@@ -37,6 +40,8 @@ HUB = PrimeHub()
 HANDOFF_SOUND = False
 
 def run():
+    apply_fast_drive_settings(3, 1, 1, 1)
+    reset_drive_state()
     runCountdown(5, 3)
     play_robot_moving_ding_dong()
     enable_gyro()
@@ -56,6 +61,8 @@ def run():
             [0, 255, 0, 0, 0],
             [0, 0, 0, 0, 0]]))
     waitForButton(Button.CENTER)
+    apply_default_drive_settings()
+    reset_drive_state()
 
 def collect():
     for i in range(NUM_RUNS):
