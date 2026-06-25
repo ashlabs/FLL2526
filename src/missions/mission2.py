@@ -43,12 +43,15 @@ HANDOFF_SOUND = False
 ROBOT_MOVING_WARNINGS = False
 ROBOT_ABOUT_TO_MOVE_WARNINGS = False
 
+DEFAULT_COUNTDOWN = 5
+DEFAULT_WARNING = 2
+
 def run():
     # Prep
     apply_fast_drive_settings(4, 1, 1, 1)
     reset_drive_state()
     # Part 1
-    runCountdown(10, 3)
+    runCountdown(DEFAULT_COUNTDOWN, DEFAULT_WARNING)
     if ROBOT_MOVING_WARNINGS:
         play_robot_moving_ding_dong()
     enable_gyro()
@@ -56,7 +59,7 @@ def run():
     disable_gyro()
     waitForButton(Button.CENTER)
     # Part 2
-    runCountdown(10, 3)
+    runCountdown(DEFAULT_COUNTDOWN, DEFAULT_WARNING)
     if ROBOT_MOVING_WARNINGS:
         play_robot_moving_ding_dong()
     enable_gyro()
@@ -64,7 +67,7 @@ def run():
     disable_gyro()
     waitForButton(Button.CENTER)
     # Part 3
-    runCountdown(10, 3)
+    runCountdown(DEFAULT_COUNTDOWN, DEFAULT_WARNING)
     if ROBOT_MOVING_WARNINGS:
         play_robot_moving_ding_dong()
     enable_gyro()
@@ -175,7 +178,7 @@ def waitForButton(button : Button = Button.CENTER):
         wait(10)
     wait(250)
 
-def runCountdown(length : int = 10, warning : int = 3):
+def runCountdown(length : int = DEFAULT_COUNTDOWN, warning : int = DEFAULT_WARNING):
     HUB.light.on(Color.YELLOW)
     for i in range(length, 0, -1):
         HUB.display.number(i)
