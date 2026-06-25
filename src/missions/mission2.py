@@ -32,7 +32,7 @@ from pybricks.tools import wait, Matrix
 
 STRAIGHT_AMOUNT = 900
 TURN_AMOUNT = 200
-SMALL_MOVE = 300
+SMALL_MOVE = 350
 MED_MOVE = 700
 DIAG_MOVE = 700
 NUM_RUNS = 3
