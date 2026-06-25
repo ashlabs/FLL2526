@@ -40,6 +40,8 @@ NUM_RUNS = 3
 HUB = PrimeHub()
 
 HANDOFF_SOUND = False
+ROBOT_MOVING_WARNINGS = False
+ROBOT_ABOUT_TO_MOVE_WARNINGS = False
 
 def run():
     # Prep
@@ -47,21 +49,24 @@ def run():
     reset_drive_state()
     # Part 1
     runCountdown(10, 3)
-    play_robot_moving_ding_dong()
+    if ROBOT_MOVING_WARNINGS:
+        play_robot_moving_ding_dong()
     enable_gyro()
     collect1()
     disable_gyro()
     waitForButton(Button.CENTER)
     # Part 2
     runCountdown(10, 3)
-    play_robot_moving_ding_dong()
+    if ROBOT_MOVING_WARNINGS:
+        play_robot_moving_ding_dong()
     enable_gyro()
     collect2()
     disable_gyro()
     waitForButton(Button.CENTER)
     # Part 3
     runCountdown(10, 3)
-    play_robot_moving_ding_dong()
+    if ROBOT_MOVING_WARNINGS:
+        play_robot_moving_ding_dong()
     enable_gyro()
     collect3()
     disable_gyro()
@@ -177,10 +182,13 @@ def runCountdown(length : int = 10, warning : int = 3):
         print(f"Running in {i} (Total {length}, Warning {warning})")
         if i == warning:
             HUB.light.on(Color.ORANGE)
-            play_robot_about_to_move_ding_dong()
+            if ROBOT_ABOUT_TO_MOVE_WARNINGS:
+                play_robot_about_to_move_ding_dong()
         wait(1000)
     HUB.light.on(Color.GREEN)
-    play_robot_moving_ding_dong()
+    
+    if ROBOT_MOVING_WARNINGS:
+        play_robot_moving_ding_dong()
 
 def play_delivery_animation(speed : int = 300):
     HUB.display.animate([
