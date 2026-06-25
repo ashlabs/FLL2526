@@ -172,7 +172,7 @@ def waitForButton(button : Button = Button.CENTER):
 
 def runCountdown(length : int = 10, warning : int = 3):
     HUB.light.on(Color.YELLOW)
-    for i in range(length, 0):
+    for i in range(length, 0, -1):
         HUB.display.number(i)
         print(f"Running in {i} (Total {length}, Warning {warning})")
         if i == warning:
