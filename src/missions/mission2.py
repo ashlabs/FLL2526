@@ -142,6 +142,7 @@ def runCountdown(length : int = 10, warning : int = 3):
     HUB.light.on(Color.YELLOW)
     for i in range(length, 0):
         HUB.display.number(i)
+        print(f"Running in {i} (Total {length}, Warning {warning})")
         if i == warning:
             HUB.light.on(Color.ORANGE)
             play_robot_about_to_move_ding_dong()
