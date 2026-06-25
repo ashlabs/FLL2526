@@ -36,7 +36,7 @@ def wait_for_center_button():
     while Button.CENTER in hub.buttons.pressed():
         wait(10)
 
-    wait(250)
+    wait(10)
 
 def wait_for_button_release(button : Button):
     while button in hub.buttons.pressed():

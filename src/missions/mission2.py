@@ -33,7 +33,7 @@ from pybricks.tools import wait, Matrix
 STRAIGHT_AMOUNT = 900
 TURN_AMOUNT = 200
 SMALL_MOVE = 350
-MED_MOVE = 700
+MED_MOVE = 400
 DIAG_MOVE = 700
 NUM_RUNS = 3
 
@@ -109,7 +109,7 @@ def collect3():
     HUB.display.number(2)
     if HANDOFF_SOUND:
         play_handoff_to_nav_code_ding_dong()
-    turn_left(TURN_AMOUNT/3)
+    turn_left(TURN_AMOUNT/3.5)
     if HANDOFF_SOUND:
         play_handoff_to_mission_code_ding_dong()
     drive_backward(DIAG_MOVE)
