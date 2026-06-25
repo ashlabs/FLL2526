@@ -32,7 +32,8 @@ from pybricks.tools import wait, Matrix
 
 STRAIGHT_AMOUNT = 900
 TURN_AMOUNT = 200
-SMALL_MOVE = 500
+SMALL_MOVE = 300
+MED_MOVE = 700
 DIAG_MOVE = 700
 NUM_RUNS = 3
 
@@ -42,7 +43,7 @@ HANDOFF_SOUND = False
 
 def run():
     # Prep
-    apply_fast_drive_settings(5, 1, 1, 1)
+    apply_fast_drive_settings(4, 1, 1, 1)
     reset_drive_state()
     # Part 1
     runCountdown(10, 3)
@@ -86,10 +87,10 @@ def collect1():
     HUB.display.number(1)
     if HANDOFF_SOUND:
         play_handoff_to_mission_code_ding_dong()
-    drive_backward(STRAIGHT_AMOUNT)
+    drive_backward(MED_MOVE)
     if HANDOFF_SOUND:
         play_handoff_to_nav_code_ding_dong()
-    drive_forward(STRAIGHT_AMOUNT)
+    drive_forward(MED_MOVE)
 
 def collect2():
     HUB.display.number(2)
