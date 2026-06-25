@@ -32,7 +32,8 @@ from pybricks.tools import wait, Matrix
 
 STRAIGHT_AMOUNT = 900
 TURN_AMOUNT = 200
-SMALL_MOVE = 100
+SMALL_MOVE = 500
+DIAG_MOVE = 700
 NUM_RUNS = 3
 
 HUB = PrimeHub()
@@ -41,7 +42,7 @@ HANDOFF_SOUND = False
 
 def run():
     # Prep
-    apply_fast_drive_settings(3, 1, 1, 1)
+    apply_fast_drive_settings(5, 1, 1, 1)
     reset_drive_state()
     # Part 1
     runCountdown(10, 3)
@@ -55,6 +56,13 @@ def run():
     play_robot_moving_ding_dong()
     enable_gyro()
     collect2()
+    disable_gyro()
+    waitForButton(Button.CENTER)
+    # Part 3
+    runCountdown(10, 3)
+    play_robot_moving_ding_dong()
+    enable_gyro()
+    collect3()
     disable_gyro()
     waitForButton(Button.CENTER)
     # Delivery
@@ -85,6 +93,29 @@ def collect1():
 
 def collect2():
     HUB.display.number(2)
+    if HANDOFF_SOUND:
+        play_handoff_to_nav_code_ding_dong()
+    turn_left(TURN_AMOUNT/2)
+    if HANDOFF_SOUND:
+        play_handoff_to_mission_code_ding_dong()
+    drive_backward(SMALL_MOVE)
+    if HANDOFF_SOUND:
+        play_handoff_to_nav_code_ding_dong()
+    drive_forward(SMALL_MOVE)
+    turn_right(TURN_AMOUNT/3)
+
+def collect3():
+    HUB.display.number(2)
+    if HANDOFF_SOUND:
+        play_handoff_to_nav_code_ding_dong()
+    turn_left(TURN_AMOUNT/3)
+    if HANDOFF_SOUND:
+        play_handoff_to_mission_code_ding_dong()
+    drive_backward(DIAG_MOVE)
+    if HANDOFF_SOUND:
+        play_handoff_to_nav_code_ding_dong()
+    drive_forward(DIAG_MOVE)
+    turn_right(TURN_AMOUNT/3)
 
 def deliver():
     if HANDOFF_SOUND:
