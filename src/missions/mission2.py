@@ -32,9 +32,9 @@ from pybricks.tools import wait, Matrix
 
 STRAIGHT_AMOUNT = 900
 TURN_AMOUNT = 200
-SMALL_MOVE = 350
+SMALL_MOVE = 330
 MED_MOVE = 500
-DIAG_MOVE = 700
+DIAG_MOVE = 600
 NUM_RUNS = 3
 
 HUB = PrimeHub()
@@ -43,8 +43,8 @@ HANDOFF_SOUND = False
 ROBOT_MOVING_WARNINGS = False
 ROBOT_ABOUT_TO_MOVE_WARNINGS = False
 
-DEFAULT_COUNTDOWN = 5
-DEFAULT_WARNING = 2
+DEFAULT_COUNTDOWN = 0
+DEFAULT_WARNING = 0
 
 def run():
     # Prep
@@ -75,7 +75,7 @@ def run():
     disable_gyro()
     waitForButton(Button.CENTER)
     # Delivery
-    runCountdown(10, 3)
+    runCountdown(DEFAULT_COUNTDOWN, DEFAULT_WARNING)
     play_delivery_animation(300)
     enable_gyro()
     deliver()
@@ -87,6 +87,7 @@ def run():
             [255, 0, 255, 0, 0],
             [0, 255, 0, 0, 0],
             [0, 0, 0, 0, 0]]))
+    wait(1000)
     waitForButton(Button.CENTER)
     apply_default_drive_settings()
     reset_drive_state()
@@ -117,7 +118,7 @@ def collect3():
     HUB.display.number(2)
     if HANDOFF_SOUND:
         play_handoff_to_nav_code_ding_dong()
-    turn_left(TURN_AMOUNT/3.5)
+    turn_left(TURN_AMOUNT/3.75)
     if HANDOFF_SOUND:
         play_handoff_to_mission_code_ding_dong()
     drive_backward(DIAG_MOVE)
