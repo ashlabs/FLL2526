@@ -1,38 +1,44 @@
 from pybricks.hubs import PrimeHub
-from pybricks.parameters import Button
+from pybricks.parameters import Button, Color
 from pybricks.tools import wait
 
 # Mission imports
 from missions.mission1 import run as mission1
 from missions.mission2 import run as mission2
+from missions.mission3 import run as mission3
 
 from robot.Sounds import(
     play_program_start_ding_dong,
-    play_program_end_ding_dong
+    play_program_end_ding_dong,
+    play_robot_ready_ding_dong
 )
 
 
 MENU_OPTIONS = [
     ("1",mission1),
     ("2", mission2),
+    ("3", mission3),
     ("E", None)
 ]
 
+VOLUME = 10
 
 hub = PrimeHub()
 
 hub.system.set_stop_button(Button.BLUETOOTH)
 
 def wait_for_center_button():
+    hub.light.on(Color.RED)
     while Button.CENTER not in hub.buttons.pressed():
         wait(10)
 
+    hub.light.on(Color.GREEN)
     while Button.CENTER in hub.buttons.pressed():
         wait(10)
 
-    wait(250)
+    wait(10)
 
-def wait_for_button_release(button):
+def wait_for_button_release(button : Button):
     while button in hub.buttons.pressed():
         wait(10)
 
@@ -71,14 +77,22 @@ def choose_menu_option():
         wait(10)
 
 def run_selected_mission(mission_function):
+    hub.light.on(Color.RED)
     hub.display.text("GO?")
     wait_for_center_button()
+    hub.light.on(Color.GREEN)
     play_program_start_ding_dong()
+    wait(10)
     mission_function()
+    wait(10)
     play_program_end_ding_dong()
+    hub.light.on(Color.BLUE)
 
 def main():
-    hub.speaker.beep()
+    hub.speaker.volume(VOLUME)
+    play_robot_ready_ding_dong()
+    hub.light.on(Color.BLUE)
+    print("Robot is Ready")
 
     while True:
         selected_index = choose_menu_option()
