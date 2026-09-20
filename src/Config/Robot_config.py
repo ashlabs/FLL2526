@@ -39,7 +39,7 @@ def config_1() -> Robot:
 
 def config_2() -> Robot:
 	# Used by:
-	# 	Elephant main (post merge 1) - V2 (Calibrated to this design on 9/19/2026)
+	# 	Elephant main (post merge 1) - V2 (Not calibrated)
 	return config_basic(leftPort = Port.A, leftDir = Direction.CLOCKWISE, rightPort = Port.B, rightDir = Direction.COUNTERCLOCKWISE, wheelDiam = 56, AxTrack = 128, MainArmPort = Port.C, MainArmDir = Direction.CLOCKWISE, SecondArmPort = Port.D, SecondArmDir = Direction.COUNTERCLOCKWISE)
 
 def config_3() -> Robot:
