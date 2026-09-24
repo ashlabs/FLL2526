@@ -4,6 +4,8 @@ from pybricks.robotics import DriveBase
 from pybricks.parameters import Button, Color, Port
 from pybricks.tools import wait, StopWatch, Matrix
 
+from RobotQuickFunctions import RobotQuickFunctions
+
 print("Robot class ready")
 
 class Robot:
@@ -22,6 +24,7 @@ class Robot:
 	DistSensor : UltrasonicSensor | None = None
 	MissionTimer : StopWatch = StopWatch()
 	hub = PrimeHub()
+	QuickFunctions : RobotQuickFunctions
 
 	def __init__(self, MainArm:Motor | None, SecondArm:Motor | None, Base:DriveBase | None, MatColorSensor:ColorSensor | None, LeftDrive:Motor | None, RightDrive:Motor | None, DistSensor: UltrasonicSensor | None):
 		self.MainArm = MainArm
@@ -31,6 +34,7 @@ class Robot:
 		self.RightDrive = RightDrive
 		self.MatColorSensor = MatColorSensor
 		self.DistSensor = DistSensor
+		self.QuickFunctions = RobotQuickFunctions(self)
 
 	def reset(self):
 		if self.MainArm is not None:
