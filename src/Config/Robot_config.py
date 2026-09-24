@@ -52,7 +52,7 @@ def config_4() -> Robot:
 	# 	Egg main (post merge 1) - V2 (Not calibrated)
 	return config_basic(leftPort = Port.A, leftDir = Direction.CLOCKWISE, rightPort = Port.B, rightDir = Direction.COUNTERCLOCKWISE, wheelDiam = 56, AxTrack = 128, MainArmPort = Port.C, MainArmDir = Direction.CLOCKWISE, SecondArmPort = Port.D, SecondArmDir = Direction.COUNTERCLOCKWISE)
 
-def config_basic(leftPort : Port | None = None, leftDir : Direction | None = None, rightPort : Port | None = None, rightDir : Direction | None = None, wheelDiam : int | None = None, AxTrack : int | None = None, MainArmPort : Port | None, MainArmDir : Direction | None = None, SecondArmPort : Port | None = None, SecondArmDir : Direction | None = None, MatColorSensorPort : Port | None = None, DistSensorPort : Port | None = None) -> Robot:
+def config_basic(leftPort : Port | None = None, leftDir : Direction | None = None, rightPort : Port | None = None, rightDir : Direction | None = None, wheelDiam : int | None = None, AxTrack : int | None = None, MainArmPort : Port | None = None, MainArmDir : Direction | None = None, SecondArmPort : Port | None = None, SecondArmDir : Direction | None = None, MatColorSensorPort : Port | None = None, DistSensorPort : Port | None = None) -> Robot:
 	if type(leftPort) is Port and type(leftDir) is Direction:
 		try:
 			LeftDrive = Motor(leftPort, leftDir)
