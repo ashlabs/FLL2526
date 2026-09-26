@@ -32,6 +32,14 @@ def apply_default_drive_settings():
         turn_acceleration=DEFAULT_TURN_ACCELERATION,
     )
 
+def apply_fast_drive_settings(speed : int = 2, turn_rate : int = 1, acceleration : int = 1, turn_acceleration : int = 1):
+    drive_base.settings(
+        straight_speed= DEFAULT_STRAIGHT_SPEED * speed,
+        straight_acceleration=DEFAULT_STRAIGHT_ACCELERATION * acceleration,
+        turn_rate=DEFAULT_TURN_RATE * turn_rate,
+        turn_acceleration=DEFAULT_TURN_ACCELERATION * turn_acceleration,
+    )
+
 def reset_drive_state():
     drive_base.stop()
     left_drive_motor.reset_angle(0)
@@ -58,3 +66,9 @@ def turn_left(angle_deg):
     apply_default_drive_settings()
     drive_base.turn(-angle_deg)
     drive_base.stop()
+
+def enable_gyro():
+    drive_base.use_gyro(True)
+
+def disable_gyro():
+    drive_base.use_gyro(False)

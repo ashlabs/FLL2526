@@ -62,6 +62,27 @@ def play_default_error_ding_dong():
     wait(200)
     speaker.beep(660, 236)
 
+def play_default_warning_ding_dong():
+    speaker.beep(880, 350)
+    wait(200)
+    speaker.beep(660, 432)
+    wait(200)
+    speaker.beep(660, 236)
+
+def play_robot_moving_ding_dong():
+    speaker.beep(880, 450)
+    wait(200)
+    speaker.beep(660, 332)
+    wait(200)
+    speaker.beep(660, 536)
+
+def play_robot_about_to_move_ding_dong():
+    speaker.beep(780, 450)
+    wait(200)
+    speaker.beep(160, 332)
+    wait(200)
+    speaker.beep(460, 536)
+
 def play_note_array(note_array : list[tuple[int, int]] = [(0, 0)]):
     for note in note_array:
         speaker.beep(note[0], note[1])
