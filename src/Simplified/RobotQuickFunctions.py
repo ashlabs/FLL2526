@@ -1,13 +1,13 @@
-from Robot import Robot
+import Robot
 
 class RobotQuickFunctions:
-	robot : Robot
+	robot : Robot.Robot
 	leftArmUpPos : int = 90
 	leftArmDownPos : int = -90
 	rightArmUpPos : int = 90
 	rightArmDownPos : int = -90
 
-	def __init__(self, robot : Robot):
+	def __init__(self, robot : Robot.Robot):
 		self.robot = robot
 
 	# Move forwaqrd by a specified amount
