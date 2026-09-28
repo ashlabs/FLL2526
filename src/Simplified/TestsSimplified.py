@@ -35,7 +35,7 @@ def run(robot : Robot):
 			print("Arm up and down test selected")
 			arm_up_down_test.Arm1 = Robot.MainArm
 			arm_up_down_test.Arm2 = Robot.SecondArm
-			arm_up_down_test.run_test(100)
+			arm_up_down_test.run_test(500)
 		elif selectedTest == "H":
 			print("Hold test selected")
 			hold_test.robot = robot
