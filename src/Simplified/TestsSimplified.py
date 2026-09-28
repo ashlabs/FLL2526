@@ -48,3 +48,7 @@ def run(robot : Robot):
 			print("Full tests menu selected")
 			TestsMain.robot = robot
 			TestsMain.main()
+
+if __name__ == "__main__":
+	robot = Robot_config.prepare_robot_object()
+	run(robot)
