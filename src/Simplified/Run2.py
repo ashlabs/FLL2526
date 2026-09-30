@@ -2,22 +2,22 @@ from Robot import Robot
 import Robot_config
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# To make the robot move forward, you can use a.f(distance).
-# To make the robot move backward, you can use a.b(distance).
-# To make the robot turn left, you can use a.l(angle).
-# To make the robot turn right, you can use a.r(angle).
-# To run the arms, use a.lp(position) and a.rp(position) to turn each arm to a specific position (lp for left and rp for right). The positions will be relative to the position of the arms when the run started.
-# To reset an arm to the starting position, use a.l0() for the left arm and a.r0() for the right arm.
-# The arms can also be moved to preset positions using a.lu() (left arm to the position set as a.leftArmUpPos), a.ru() (right arm to the position set as a.rightArmUpPos), a.ld() (left arm to the position set as a.leftArmDownPos), and a.rd() (right arm to the position set as a.rightArmDownPos).
-# To access the robot's peripherals directly, use a.robot or robot.
+# To make the robot move forward, you can use Actions.f(distance).
+# To make the robot move backward, you can use Actions.b(distance).
+# To make the robot turn left, you can use Actions.l(angle).
+# To make the robot turn right, you can use Actions.r(angle).
+# To run the arms, use Actions.lp(position) and Actions.rp(position) to turn each arm to Actions specific position (lp for left and rp for right). The positions will be relative to the position of the arms when the run started.
+# To reset an arm to the starting position, use Actions.l0() for the left arm and Actions.r0() for the right arm.
+# The arms can also be moved to preset positions using Actions.lu() (left arm to the position set as Actions.leftArmUpPos), Actions.ru() (right arm to the position set as Actions.rightArmUpPos), Actions.ld() (left arm to the position set as Actions.leftArmDownPos), and Actions.rd() (right arm to the position set as Actions.rightArmDownPos).
+# To access the robot's peripherals directly, use Actions.robot or robot.
 # Running this file will execute the run directly.
-# To access all runs with a selector on the robot, run Main.py.
-# To access robot functions while not in this function, pass a.robot, robot, or a into the other function.
-# Call a.robot.Base.use_gyro(True) to turn the gyro on and a.robot.Base.use_g_gyro(False) to turn it off.
+# To access all runs with Actions selector on the robot, run Main.py.
+# To access robot functions while not in this function, pass Actions.robot, robot, or Actions into the other function.
+# Call Actions.robot.Base.use_gyro(True) to turn the gyro on and Actions.robot.Base.use_g_gyro(False) to turn it off.
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 def runMain(robot: Robot):
-	a = robot.QuickFunctions
+	Actions = robot.QuickFunctions
 
 	# Put your code here
 
