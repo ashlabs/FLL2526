@@ -13,6 +13,7 @@ import Robot_config
 # Running this file will execute the run directly.
 # To access all runs with a selector on the robot, run Main.py.
 # To access robot functions while not in this function, pass a.robot, robot, or a into the other function.
+# Call a.robot.Base.use_gyro(True) to turn the gyro on and a.robot.Base.use_g_gyro(False) to turn it off.
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 def runMain(robot: Robot):
