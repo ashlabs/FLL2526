@@ -19,5 +19,5 @@ def main(robot : Robot):
 			TestsSimplified.run(robot)
 
 if __name__ == "__main__":
-	robot = Robot_config.config_2()
+	robot = Robot_config.prepare_robot_object()
 	main(robot)

@@ -10,7 +10,7 @@ class RobotQuickFunctions:
 	def __init__(self, robot : Robot.Robot):
 		self.robot = robot
 
-	# Move forwaqrd by a specified amount
+	# Move forward by a specified amount
 	def f(self, distance : int):
 		if self.robot.Base is not None:
 			self.robot.Base.straight(distance)

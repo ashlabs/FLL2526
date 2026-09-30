@@ -1,6 +1,20 @@
 from Robot import Robot
 import Robot_config
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# To make the robot move forward, you can use a.f(distance).
+# To make the robot move backward, you can use a.b(distance).
+# To make the robot turn left, you can use a.l(angle).
+# To make the robot turn right, you can use a.r(angle).
+# To run the arms, use a.lp(position) and a.rp(position) to turn each arm to a specific position (lp for left and rp for right). The positions will be relative to the position of the arms when the run started.
+# To reset an arm to the starting position, use a.l0() for the left arm and a.r0() for the right arm.
+# The arms can also be moved to preset positions using a.lu() (left arm to the position set as a.leftArmUpPos), a.ru() (right arm to the position set as a.rightArmUpPos), a.ld() (left arm to the position set as a.leftArmDownPos), and a.rd() (right arm to the position set as a.rightArmDownPos).
+# To access the robot's peripherals directly, use a.robot or robot.
+# Running this file will execute the run directly.
+# To access all runs with a selector on the robot, run Main.py.
+# To access robot functions while not in this function, pass a.robot, robot, or a into the other function.
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 def runMain(robot: Robot):
 	a = robot.QuickFunctions
 

@@ -15,7 +15,8 @@ config_selector : Selector = Selector([
 ])
 
 def prepare_robot_object() -> Robot:
-	selected_config = config_selector.selectNext()
+	# selected_config = config_selector.selectNext()
+	selected_config = 2
 	if (selected_config == 1):
 		return config_1()
 	elif (selected_config == 2):
