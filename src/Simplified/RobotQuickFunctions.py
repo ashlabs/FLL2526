@@ -11,12 +11,12 @@ class RobotQuickFunctions:
 		self.robot = robot
 
 	# Move forward by a specified amount
-	def f(self, distance : int):
+	def forward(self, distance : int):
 		if self.robot.Base is not None:
 			self.robot.Base.straight(distance)
 
 	# Move backward by a specified amount
-	def b(self, distance : int):
+	def backward(self, distance : int):
 		if self.robot.Base is not None:
 			self.robot.Base.straight(-distance)
 
