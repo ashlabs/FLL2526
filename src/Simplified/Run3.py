@@ -20,6 +20,6 @@ def runMain(robot: Robot):
 	Actions = robot.QuickFunctions
 
 	# Put your code here
-
+	
 if __name__ == "__main__":
 	runMain(Robot_config.prepare_robot_object())

@@ -18,6 +18,7 @@ def main(robot : Robot):
 		elif RunSelector.selectedOption == "t":
 			TestsSimplified.run(robot)
 
+
 if __name__ == "__main__":
 	robot = Robot_config.prepare_robot_object()
 	main(robot)
