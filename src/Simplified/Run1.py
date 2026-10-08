@@ -32,9 +32,9 @@ def runMain(robot: Robot):
 	Actions.forward(175)
 	# Tree code
 	if robot.MainArm is not None:
-		robot.MainArm.run_target(500, 90)
-		# Actions.backward(50)
-		# robot.MainArm.run_target(500, 0)
+		robot.MainArm.run_target(500, 45)
+		Actions.backward(50)
+		robot.MainArm.run_target(500, 0)
 	# End tree code
 	# Actions.backward(190)
 	# Actions.left(90)
