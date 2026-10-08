@@ -21,10 +21,11 @@ def runMain(robot: Robot):
 
 	# Put your code here
 	Actions.forward(1000)
-	Actions.backward(350)
-	Actions.left(90)
-	Actions.backward(200)
+	Actions.backward(250)
 	Actions.right(90)
+	Actions.backward(250)
+	Actions.left(90)
+	Actions.forward(700)
 	#Actions.forward(400)
 	#Actions.right(50)
 if __name__ == "__main__":
