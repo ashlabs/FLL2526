@@ -17,18 +17,23 @@ import Robot_config
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 def runMain(robot: Robot):
+	robot.reset()
 	Actions = robot.QuickFunctions
 
 	if Actions.robot.Base is not None:
 		Actions.robot.Base.use_gyro(True)
 
 	Actions.forward(100)
-	Actions.right(50)
-	Actions.forward(1000)
-	Actions.left(45)
-	Actions.forward(100)
-	# Insert Tree code here
-	Actions.backward(100)
+	Actions.right(30)
+	Actions.forward(700)
+	Actions.right(60)
+	Actions.forward(365)
+	Actions.left(90)
+	Actions.forward(130)
+	# Tree code
+	Actions.LeftUp()
+	# End tree code
+	Actions.backward(150)
 	Actions.left(90)
 	Actions.forward(450)
 	Actions.right(90)
@@ -37,8 +42,8 @@ def runMain(robot: Robot):
 	Actions.backward(150)
 	Actions.left(90)
 	Actions.forward(200)
-	Actions.right(90)
-	Actions.backward(900) # This does the rock
+	Actions.left(90)
+	Actions.forward(900) # This does the rock
 
 if __name__ == "__main__":
 	runMain(Robot_config.prepare_robot_object())
