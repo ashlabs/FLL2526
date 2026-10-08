@@ -19,7 +19,17 @@ import Robot_config
 def runMain(robot: Robot):
 	Actions = robot.QuickFunctions
 
-	# Put your code here
+	Actions.forward(330)
+    Actions.right(90)
+    Actions.forward(450)
+    Actions.left(45)
+    Actions.forward(110)
+    Actions.left(100)
+    Actions.forward(270)
+    Actions.left(150)
+    Actions.backward(20)
+    Actions.left(160)
+    #Actions.backward(250)
 
 if __name__ == "__main__":
 	runMain(Robot_config.prepare_robot_object())
