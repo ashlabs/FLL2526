@@ -29,21 +29,24 @@ def runMain(robot: Robot):
 	Actions.right(60)
 	Actions.forward(365)
 	Actions.left(90)
-	Actions.forward(130)
+	Actions.forward(175)
 	# Tree code
-	Actions.LeftUp()
+	if robot.MainArm is not None:
+		robot.MainArm.run_target(500, 90)
+		# Actions.backward(50)
+		# robot.MainArm.run_target(500, 0)
 	# End tree code
-	Actions.backward(150)
-	Actions.left(90)
-	Actions.forward(450)
-	Actions.right(90)
-	Actions.forward(150)
-	# Insert Root code here
-	Actions.backward(150)
-	Actions.left(90)
-	Actions.forward(200)
-	Actions.left(90)
-	Actions.forward(900) # This does the rock
+	# Actions.backward(190)
+	# Actions.left(90)
+	# Actions.forward(450)
+	# Actions.right(90)
+	# Actions.forward(150)
+	# # Insert Root code here
+	# Actions.backward(150)
+	# Actions.left(90)
+	# Actions.forward(200)
+	# Actions.left(90)
+	# Actions.forward(900) # This does the rock
 
 if __name__ == "__main__":
 	runMain(Robot_config.prepare_robot_object())
