@@ -27,21 +27,22 @@ def runMain(robot: Robot):
 	Actions.right(30)
 	Actions.forward(700)
 	Actions.right(60)
-	Actions.forward(365)
+	Actions.forward(375)
 	Actions.left(90)
-	Actions.forward(175)
+	Actions.forward(185)
 	# Tree code
 	if robot.MainArm is not None:
-		robot.MainArm.run_target(500, 45)
+		robot.MainArm.run_target(500, 50)
 		Actions.backward(50)
 		robot.MainArm.run_target(500, 0)
 	# End tree code
-	# Actions.backward(190)
-	# Actions.left(90)
-	# Actions.forward(450)
-	# Actions.right(90)
-	# Actions.forward(150)
-	# # Insert Root code here
+	Actions.backward(185)
+	Actions.left(90)
+	Actions.forward(360)
+	Actions.right(90)
+	Actions.forward(150)
+	# Start Root code
+	# End Root code
 	# Actions.backward(150)
 	# Actions.left(90)
 	# Actions.forward(200)
