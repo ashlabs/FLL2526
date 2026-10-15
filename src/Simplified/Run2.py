@@ -24,9 +24,11 @@ def runMain(robot: Robot):
 	Actions.backward(250)
 	Actions.right(90)
 	Actions.backward(250)
-	Actions.left(90)
-	Actions.forward(700)
-	#Actions.forward(400)
-	#Actions.right(50)
+	Actions.left(115)
+	Actions.forward(220)
+	Actions.right(45)
+	Actions.forward(100)
+	
+	robot.MainArm.run_target(100,90)
 if __name__ == "__main__":
 	runMain(Robot_config.prepare_robot_object())
