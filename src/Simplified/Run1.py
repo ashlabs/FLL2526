@@ -42,6 +42,11 @@ def runMain(robot: Robot):
 	Actions.right(90)
 	Actions.forward(150)
 	# Start Root code
+	Actions.forward(80)
+	if robot.MainArm is not None:
+		robot.MainArm.run_target(500, 70)
+		Actions.backward(80)
+		robot.MainArm.run_target(500, 0)
 	# End Root code
 	# Actions.backward(150)
 	# Actions.left(90)
