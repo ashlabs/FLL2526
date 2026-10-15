@@ -23,21 +23,25 @@ def runMain(robot: Robot):
     # settings(straight_speed, straight_acceleration, turn_rate, turn_acceleration)
     # Pybricks default straight_speed is usually around 400-500 mm/s.
     #Change the straigth_speed
-    robot.Base.settings(
-        straight_speed=200,         # Slower linear speed (mm/s)
-        straight_acceleration=100,  # Slower acceleration (mm/s²)
-        turn_rate=150,              # Slower turning speed (deg/s)
-        turn_acceleration=100       # Slower turning acceleration (deg/s²)
-    )
     
     # Your movement actions will now run at the new slower speed
     Actions.forward(250)
-    Actions.right(70)
-    Actions.forward(515)
+    Actions.right(50)
+    Actions.forward(470)
     Actions.left(90)
-    Actions.forward(440)
-    Actions.left(70)
-   
+    Actions.forward(430)
+    Actions.left(80)
+    robot.Base.settings(
+        straight_speed=150,         # Slower linear speed (mm/s)
+        straight_acceleration=70,  # Slower acceleration (mm/s²)
+        turn_rate=150,              # Slower turning speed (deg/s)
+        turn_acceleration=125       # Slower turning acceleration (deg/s²)
+    )
+    Actions.backward(150)
+    Actions.forward(20)
+    Actions.forward(90)
+    Actions.left(90)
+    Actions.forward(500)
     
 if __name__ == "__main__":
     runMain(Robot_config.prepare_robot_object())
