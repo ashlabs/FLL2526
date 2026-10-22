@@ -38,15 +38,17 @@ def runMain(robot: Robot):
 	# End tree code
 	Actions.backward(185)
 	Actions.left(90)
-	Actions.forward(360)
+	Actions.forward(330)
 	Actions.right(90)
-	Actions.forward(150)
+	Actions.forward(145)
 	# Start Root code
-	Actions.forward(80)
 	if robot.MainArm is not None:
-		robot.MainArm.run_target(500, 70)
-		Actions.backward(80)
-		robot.MainArm.run_target(500, 0)
+		for _ in range(3):
+			Actions.forward(95)
+			robot.MainArm.run_target(500, 75)
+			Actions.forward(30)
+			Actions.backward(125)
+			robot.MainArm.run_target(500, 0)
 	# End Root code
 	# Actions.backward(150)
 	# Actions.left(90)
