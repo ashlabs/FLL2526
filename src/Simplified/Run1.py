@@ -45,7 +45,7 @@ def runMain(robot: Robot):
 	if robot.MainArm is not None:
 		for i in range(3):
 			Actions.forward(100 - (i * 5))
-			robot.MainArm.run_target( 500, 75 + i)
+			robot.MainArm.run_target(500, 75 + (i * 5))
 			Actions.forward(30 + (i * 5))
 			Actions.backward(135)
 			robot.MainArm.run_target(500, 0)
