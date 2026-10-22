@@ -20,15 +20,16 @@ def runMain(robot: Robot):
 	Actions = robot.QuickFunctions
 
 	# Put your code here
-	Actions.forward(1000)
-	Actions.backward(250)
-	Actions.right(90)
-	Actions.backward(250)
-	Actions.left(115)
-	Actions.forward(220)
-	Actions.right(45)
-	Actions.forward(100)
+	# Actions.forward(1000)
+	# Actions.backward(250)
+	# Actions.right(90)
+	# Actions.backward(250)
+	# Actions.left(115)
+	# Actions.forward(220)
+	# Actions.right(45)
+	# Actions.forward(100)
 	
-	robot.MainArm.run_target(100,90)
+	robot.MainArm.run_target(500,90)
 if __name__ == "__main__":
 	runMain(Robot_config.prepare_robot_object())
+
