@@ -26,22 +26,32 @@ def runMain(robot: Robot):
     
     # Your movement actions will now run at the new slower speed
     Actions.forward(250)
-    Actions.right(50)
+    Actions.right(45)
     Actions.forward(470)
     Actions.left(90)
     Actions.forward(430)
-    Actions.left(80)
+    Actions.left(65)
     robot.Base.settings(
         straight_speed=150,         # Slower linear speed (mm/s)
         straight_acceleration=70,  # Slower acceleration (mm/s²)
         turn_rate=150,              # Slower turning speed (deg/s)
         turn_acceleration=125       # Slower turning acceleration (deg/s²)
     )
-    Actions.backward(150)
+    Actions.backward(120)
     Actions.forward(20)
-    Actions.forward(90)
+    Actions.forward(75)
     Actions.left(90)
-    Actions.forward(500)
+    robot.Base.settings(
+        straight_speed=560,         # Slower linear speed (mm/s)
+        straight_acceleration=120,  # Slower acceleration (mm/s²)
+        turn_rate=150,              # Slower turning speed (deg/s)
+        turn_acceleration=125       # Slower turning acceleration (deg/s²)
+    )
+    Actions.forward(620)
+    Actions.left(170)
+    Actions.forward(250)
+    Actions.right(45)
+    Actions.SetRightArm(20)
     
 if __name__ == "__main__":
     runMain(Robot_config.prepare_robot_object())
