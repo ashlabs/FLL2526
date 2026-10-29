@@ -52,9 +52,15 @@ def runMain(robot: Robot):
 	# # End Root code
 	# Actions.backward(150)
 	# Actions.left(90)
-	Actions.forward(200)
-	# Actions.left(90)
-	# Actions.forward(900) # This does the rock
+	if robot.MainArm is not None:
+		robot.MainArm.run_target(500, 120) # This moves the arm outof the way
+	Actions.forward(225)
+	Actions.left(90)
+	if robot.SecondArm is not None:
+		robot.SecondArm.run_target(500, -90) # This extends the arm to hit the rock
+	Actions.forward(900) # This does the rock
+	if robot.SecondArm is not None:
+		robot.SecondArm.run_target(500, 0) # This retracts the arm to hit the rock
 
 if __name__ == "__main__":
 	runMain(Robot_config.prepare_robot_object())
