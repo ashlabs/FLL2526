@@ -1,5 +1,6 @@
 from Robot import Robot
 import Robot_config
+from pybricks.tools import wait
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # To make the robot move forward, you can use Actions.forward(distance).
@@ -24,11 +25,12 @@ def runMain(robot: Robot):
 		Actions.robot.Base.use_gyro(True)
 
 	if robot.MainArm is not None:
-		robot.MainArm.run_target(500, 120)
+		robot.MainArm.run_target(500, 40)
 	if robot.Base is not None:
 		robot.Base.straight(-500, wait=False)
 	if robot.MainArm is not None:
 		robot.MainArm.run_target(500, 0)
+	wait(1000)
 	
 
 if __name__ == "__main__":

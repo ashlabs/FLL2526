@@ -57,7 +57,7 @@ def runMain(robot: Robot):
 	Actions.forward(230)
 	Actions.left(90)
 	if robot.SecondArm is not None:
-		robot.SecondArm.run_target(500, 90) # This extends the arm to hit the rock
+		robot.SecondArm.run_target(500, 95) # This extends the arm to hit the rock
 	Actions.forward(900) # This does the rock
 	if robot.SecondArm is not None:
 		robot.SecondArm.run_target(500, 0) # This resets the arm after hitting the rock
