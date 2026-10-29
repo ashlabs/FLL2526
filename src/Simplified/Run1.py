@@ -53,14 +53,16 @@ def runMain(robot: Robot):
 	# Actions.backward(150)
 	# Actions.left(90)
 	if robot.MainArm is not None:
-		robot.MainArm.run_target(500, 120) # This moves the arm outof the way
-	Actions.forward(225)
+		robot.MainArm.run_target(500, 120) # This moves the arm out of the way
+	Actions.forward(230)
 	Actions.left(90)
 	if robot.SecondArm is not None:
-		robot.SecondArm.run_target(500, -90) # This extends the arm to hit the rock
+		robot.SecondArm.run_target(500, 90) # This extends the arm to hit the rock
 	Actions.forward(900) # This does the rock
 	if robot.SecondArm is not None:
-		robot.SecondArm.run_target(500, 0) # This retracts the arm to hit the rock
+		robot.SecondArm.run_target(500, 0) # This resets the arm after hitting the rock
+	if robot.MainArm is not None:
+		robot.MainArm.run_target(500, 0) # This resets the arm
 
 if __name__ == "__main__":
 	runMain(Robot_config.prepare_robot_object())
