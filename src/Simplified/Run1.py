@@ -39,20 +39,20 @@ def runMain(robot: Robot):
 	Actions.backward(185)
 	Actions.left(90)
 	Actions.forward(330)
-	Actions.right(90)
-	Actions.forward(145)
-	# Start Root code
-	if robot.MainArm is not None:
-		for i in range(3):
-			Actions.forward(100 - (i * 5))
-			robot.MainArm.run_target(500, 75 + (i * 5))
-			Actions.forward(30 + (i * 5))
-			Actions.backward(135)
-			robot.MainArm.run_target(500, 0)
-	# End Root code
+	# Actions.right(90)
+	# Actions.forward(145)
+	# # Start Root code
+	# if robot.MainArm is not None:
+	# 	for i in range(3):
+	# 		Actions.forward(100 - (i * 5))
+	# 		robot.MainArm.run_target(500, 75 + (i * 5))
+	# 		Actions.forward(30 + (i * 5))
+	# 		Actions.backward(135)
+	# 		robot.MainArm.run_target(500, 0)
+	# # End Root code
 	# Actions.backward(150)
 	# Actions.left(90)
-	# Actions.forward(200)
+	Actions.forward(200)
 	# Actions.left(90)
 	# Actions.forward(900) # This does the rock
 
