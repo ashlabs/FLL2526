@@ -1,6 +1,6 @@
 from Robot import Robot
 import Robot_config
-
+from pybricks.tools import wait
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # To make the robot move forward, you can use Actions.forward(distance).
 # To make the robot move backward, you can use Actions.backward(distance).
@@ -22,12 +22,15 @@ def runMain(robot: Robot):
 	#Put your code here
 	robot.MainArm.run_angle(500,90)
 	Actions.forward(990)
-	Actions.backward(250)
-	Actions.right(110)
-	Actions.backward(260)
-	Actions.left(115)
-	Actions.forward(240)
-	Actions.right(40)
+	Actions.backward(900)
+	wait(7000)
+
+	Actions.forward(600)
+	Actions.left(90)
+	Actions.forward(500)
+	Actions.right(90)
+	Actions.forward(100)
+
 	robot.MainArm.run_angle(500,-50)
 	Actions.forward(120)
 	robot.MainArm.run_angle(500,40)
