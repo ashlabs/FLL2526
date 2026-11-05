@@ -67,3 +67,14 @@ class Robot:
 				[0, 0, 0, 0, 0]]))
 		self.hub.light.on(Color.GREEN)
 		self.MissionTimer.pause()
+		
+
+	def runCountdown(self, length : int = 5, warning : int = 3):
+		self.hub.light.on(Color.YELLOW)
+		for i in range(length, 0, -1):
+			self.hub.display.number(i)
+			print(f"Running in {i} (Total {length}, Warning {warning})")
+			if i == warning:
+				self.hub.light.on(Color.ORANGE)
+			wait(1000)
+		self.hub.light.on(Color.GREEN)
