@@ -17,6 +17,7 @@ import Robot_config
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 def runMain(robot: Robot):
+	robot.reset()
 	Actions = robot.QuickFunctions
 
 	Actions.forward(500)
