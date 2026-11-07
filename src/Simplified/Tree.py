@@ -25,13 +25,13 @@ def runMain(robot: Robot):
 		Actions.robot.Base.use_gyro(True)
 
 	if robot.MainArm is not None and robot.SecondArm is not None:
-		robot.MainArm.run_target(50, 70, wait=False)
-		robot.SecondArm.run_target(50, 70, wait=True)
+		robot.MainArm.run_target(50, 75, wait=False)
+		robot.SecondArm.run_target(50, 75, wait=True)
 
-	robot.runCountdown(length=5, warning=3)	
+	robot.runCountdown(length=3, warning=1)	
 
 	if robot.Base is not None:
-		robot.Base.straight(-100, wait=True)
+		robot.Base.straight(-140, wait=True)
 
 	if robot.MainArm is not None and robot.SecondArm is not None:
 		robot.MainArm.run_target(50, 0, wait=False)
