@@ -21,6 +21,17 @@ def runMain(robot: Robot):
 	robot.reset()
 	Actions = robot.QuickFunctions
 
+	# Launched with: 45 degree jig
+
+	# Drive to mission
+	Actions.forward(100)
+	Actions.left(20)
+	Actions.forward(700)
+	Actions.left(25)
+	Actions.forward(140)
+
+	# Do mission
+
 	if Actions.robot.Base is not None:
 		Actions.robot.Base.use_gyro(True)
 
@@ -28,16 +39,21 @@ def runMain(robot: Robot):
 		robot.MainArm.run_target(50, 75, wait=False)
 		robot.SecondArm.run_target(50, 75, wait=True)
 
-	robot.runCountdown(length=3, warning=1)	
+	robot.runCountdown(length=1, warning=1)
 
-	if robot.Base is not None:
-		robot.Base.straight(-140, wait=True)
+	Actions.backward(140)
 
 	if robot.MainArm is not None and robot.SecondArm is not None:
 		robot.MainArm.run_target(50, 0, wait=False)
 		robot.SecondArm.run_target(50, 0, wait=True)
 
+	robot.reset()
 	wait(100)
+
+	# Go back
+
+	Actions.right(30)
+	Actions.backward(700)
 	
 
 if __name__ == "__main__":
