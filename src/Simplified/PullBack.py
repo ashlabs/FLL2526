@@ -36,7 +36,7 @@ def runMain(robot: Robot):
 		robot.SecondArm.run_target(50, 10, wait=True)
 
 	if robot.Base is not None:
-		robot.Base.straight(-10, wait=True)
+		robot.Base.straight(-20, wait=True)
 
 	wait(100)
 		
@@ -45,7 +45,7 @@ def runMain(robot: Robot):
 		robot.SecondArm.run_target(50, 0, wait=True)
 
 	if robot.Base is not None:
-		robot.Base.straight(-430, wait=True)
+		robot.Base.straight(-420, wait=True)
 	
 
 if __name__ == "__main__":
