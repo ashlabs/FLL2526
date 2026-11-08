@@ -26,9 +26,9 @@ def runMain(robot: Robot):
 	# Drive to mission
 	Actions.forward(100)
 	Actions.left(20)
-	Actions.forward(700)
+	Actions.forward(720)
 	Actions.left(25)
-	Actions.forward(140)
+	Actions.forward(120)
 
 	# Do mission
 
@@ -41,7 +41,7 @@ def runMain(robot: Robot):
 
 	robot.runCountdown(length=1, warning=1)
 
-	Actions.backward(140)
+	Actions.backward(150)
 
 	if robot.MainArm is not None and robot.SecondArm is not None:
 		robot.MainArm.run_target(50, 0, wait=False)
