@@ -53,7 +53,39 @@ def runMain(robot: Robot):
 	# Go back
 
 	Actions.right(30)
-	Actions.backward(700)
+	Actions.backward(790)
+
+	# Do rock
+
+	Actions.left(30)
+
+	robot.reset()
+
+	if Actions.robot.Base is not None:
+		Actions.robot.Base.use_gyro(True)
+
+	if robot.MainArm is not None and robot.SecondArm is not None:
+		robot.MainArm.run_target(50, 100, wait=False)
+		robot.SecondArm.run_target(50, 100, wait=True)
+
+	if robot.Base is not None:
+		robot.Base.straight(440, wait=True)
+		
+	if robot.MainArm is not None and robot.SecondArm is not None:
+		robot.MainArm.run_target(50, 10, wait=False)
+		robot.SecondArm.run_target(50, 10, wait=True)
+
+	if robot.Base is not None:
+		robot.Base.straight(-10, wait=True)
+
+	wait(100)
+		
+	if robot.MainArm is not None and robot.SecondArm is not None:
+		robot.MainArm.run_target(50, 0, wait=False)
+		robot.SecondArm.run_target(50, 0, wait=True)
+
+	if robot.Base is not None:
+		robot.Base.straight(-430, wait=True)
 	
 
 if __name__ == "__main__":
