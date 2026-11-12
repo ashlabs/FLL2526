@@ -1,5 +1,6 @@
 from Robot import Robot
 import Robot_config
+import Sounds
 from pybricks.tools import wait
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -21,39 +22,52 @@ def runMain(robot: Robot):
 	robot.reset()
 	Actions = robot.QuickFunctions
 
+	if robot.Base is not None:
+		robot.Base.use_gyro(True)
+
 	# Launched with: 45 degree jig
 
 	# Drive to mission
+	Sounds.play_waypoint_ding_dong()
 	Actions.forward(100)
-	Actions.left(20)
-	Actions.forward(720)
-	Actions.left(25)
-	Actions.forward(120)
+	Sounds.play_waypoint_ding_dong()
+	Actions.left(14)
+	Sounds.play_waypoint_ding_dong()
+	Actions.forward(750)
+	Sounds.play_waypoint_ding_dong()
+	Actions.left(28)
+	Sounds.play_waypoint_ding_dong()
+	Actions.forward(108)
+	Sounds.play_waypoint_ding_dong()
 
 	# Do mission
 
-	if Actions.robot.Base is not None:
-		Actions.robot.Base.use_gyro(True)
-
+	Sounds.play_waypoint_ding_dong()
 	if robot.MainArm is not None and robot.SecondArm is not None:
 		robot.MainArm.run_target(50, 75, wait=False)
 		robot.SecondArm.run_target(50, 75, wait=True)
 
-	robot.runCountdown(length=1, warning=1)
+	# Sounds.play_waypoint_ding_dong()
+	# robot.runCountdown(length=1, warning=1)
 
-	Actions.backward(150)
-
-	if robot.MainArm is not None and robot.SecondArm is not None:
-		robot.MainArm.run_target(50, 0, wait=False)
-		robot.SecondArm.run_target(50, 0, wait=True)
+	# Sounds.play_waypoint_ding_dong()
+	# Actions.backward(160)
+	
+	# Sounds.play_waypoint_ding_dong()
+	# if robot.MainArm is not None and robot.SecondArm is not None:
+	# 	robot.MainArm.run_target(50, 0, wait=False)
+	# 	robot.SecondArm.run_target(50, 0, wait=True)
 
 	robot.reset()
 	wait(100)
 
 	# Go back
-
-	Actions.right(30)
-	Actions.backward(700)
+	
+	# Sounds.play_waypoint_ding_dong()
+	# Actions.right(30)
+	# Sounds.play_waypoint_ding_dong()
+	# Actions.backward(700)
+	# Sounds.play_waypoint_ding_dong()
 	
 
 if __name__ == "__main__":

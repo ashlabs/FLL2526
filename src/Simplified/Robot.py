@@ -67,7 +67,6 @@ class Robot:
 				[0, 0, 0, 0, 0]]))
 		self.hub.light.on(Color.GREEN)
 		self.MissionTimer.pause()
-		
 
 	def runCountdown(self, length : int = 5, warning : int = 3):
 		self.hub.light.on(Color.YELLOW)
