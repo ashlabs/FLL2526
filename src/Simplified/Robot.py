@@ -1,7 +1,7 @@
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
 from pybricks.robotics import DriveBase
-from pybricks.parameters import Button, Color, Port
+from pybricks.parameters import Button, Color
 from pybricks.tools import wait, StopWatch, Matrix
 
 from RobotQuickFunctions import RobotQuickFunctions
