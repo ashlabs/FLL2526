@@ -36,10 +36,10 @@ def runMain(robot: Robot):
 	Sounds.play_waypoint_ding_dong()
 	Actions.forward(750)
 	Sounds.play_waypoint_ding_dong()
-	Actions.left(28)
+	Actions.left(30)
 	Sounds.play_waypoint_ding_dong()
 
-	Actions.forward(90)
+	Actions.forward(80)
 	Sounds.play_waypoint_ding_dong()
 
 	if robot.Base is not None and robot.MatColorSensor is not None:
@@ -49,20 +49,24 @@ def runMain(robot: Robot):
 		
 	Sounds.play_waypoint_ding_dong()
 
-	Actions.forward(5)
+	Actions.forward(11)
 	Sounds.play_waypoint_ding_dong()
 
 	# Do mission
 
 	Sounds.play_waypoint_ding_dong()
 	if robot.MainArm is not None and robot.SecondArm is not None:
-		robot.MainArm.run_target(50, 45, wait=False)
-		robot.SecondArm.run_target(50, 45, wait=True)
+		robot.MainArm.run_target(55, 100, wait=False)
+		robot.SecondArm.run_target(55, 100, wait=True)
 
-		Actions.backward(30)
+		Sounds.play_waypoint_ding_dong()
 
-		robot.MainArm.run_target(50, 30, wait=False)
-		robot.SecondArm.run_target(50, 30, wait=True)
+		Actions.backward(20)
+		
+		Sounds.play_waypoint_ding_dong()
+
+		robot.MainArm.run_target(55, 100, wait=False)
+		robot.SecondArm.run_target(55, 100, wait=True)
 
 	# Sounds.play_waypoint_ding_dong()
 	# robot.runCountdown(length=1, warning=1)
@@ -72,8 +76,8 @@ def runMain(robot: Robot):
 	
 	# Sounds.play_waypoint_ding_dong()
 	# if robot.MainArm is not None and robot.SecondArm is not None:
-	# 	robot.MainArm.run_target(50, 0, wait=False)
-	# 	robot.SecondArm.run_target(50, 0, wait=True)
+	# 	robot.MainArm.run_target(55, 0, wait=False)
+	# 	robot.SecondArm.run_target(55, 0, wait=True)
 
 	robot.reset()
 	wait(100)
