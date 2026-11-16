@@ -22,12 +22,18 @@ def runMain(robot: Robot):
 
 	#Put your code here
 	robot.MainArm.run_target(500,-139)
+	################################
+	#drone mission
+	################################
  	# Actions.forward(990)
  	# Actions.backward(900)
  	# wait(7000)
-	runs = [1,2,3]
+	runs = [1,2]
 	Actions.forward(415)
-	for i in range(len(runs)):
+	################################
+	#first two reps of flying seeds
+	################################
+	for i in range(len(runs)): 
 		robot.MainArm.run_angle(500,20)
 
 		Actions.backward(30)
@@ -40,8 +46,35 @@ def runMain(robot: Robot):
 
 		Actions.forward(80)
 
-	Actions.backward(100) 
+	################################
+	#Doing last rep of flying seeds	
+	################################
+	robot.MainArm.run_angle(500,20)
 	
+	Actions.backward(30)
+	
+	robot.MainArm.run_angle(500, 15)
+	
+	Actions.backward(50)
+	
+	robot.MainArm.run_angle(500, -35)
+
+	Actions.backward(100) 
+
+	robot.MainArm.run_angle(500, 90)
+
+	Actions.right(50)
+
+	Actions.forward(450)
+
+	Actions.left(90)
+
+	Actions.forward(150)
+
+	Actions.right(92)
+
+	robot.MainArm.run_angle(500, -50)
 if __name__ == "__main__":
+	
 	runMain(Robot_config.prepare_robot_object())
 
