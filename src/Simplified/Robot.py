@@ -11,14 +11,14 @@ print("Robot class ready")
 class Robot:
 	MainArm : Motor | None = None
 	SecondArm : Motor | None = None
-	ArmSpeed : int = 0
+	ArmSpeed : int = 50
 	LeftDrive : Motor | None = None
 	RightDrive : Motor | None = None
 	Base : DriveBase | None = None
-	DriveSpeed : int = 0
-	DriveAcceleration : int = 0
-	TurnSpeed : int = 0
-	TurnAcceleration : int = 0
+	DriveSpeed : int = 100
+	DriveAcceleration : int = 150
+	TurnSpeed : int = 100
+	TurnAcceleration : int = 300
 	DriveGyroEnabled : bool = False
 	MatColorSensor : ColorSensor | None = None
 	DistSensor : UltrasonicSensor | None = None
@@ -57,6 +57,8 @@ class Robot:
 		self.hub.light.off()
 		self.hub.display.off()
 		self.hub.system.set_stop_button(Button.CENTER)
+		self.setSpeed(100)
+		self.setArmSpeed(50)
 
 	def MissionDone(self):
 		self.hub.display.icon(Matrix([
@@ -85,3 +87,9 @@ class Robot:
 		self.DriveSpeed = speed
 		if self.Base is not None:
 			self.Base.settings(straight_speed=speed, straight_acceleration=self.DriveAcceleration, turn_rate=self.TurnSpeed, turn_acceleration=self.TurnAcceleration)
+
+	def getArmSpeed(self) -> int:
+		return self.ArmSpeed
+
+	def setArmSpeed(self, speed: int):
+		self.ArmSpeed = speed

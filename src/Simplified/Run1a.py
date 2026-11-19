@@ -26,15 +26,21 @@ def runMain(robot: Robot):
 	if robot.Base is not None:
 		robot.Base.use_gyro(True)
 
-	robot.setSpeed(200)
+	robot.setSpeed(400)
 
 	# Launched with: forward-facing jig
 	if robot.MainArm is not None and robot.SecondArm is not None:
-		robot.MainArm.run_target(50, 90, wait=False)
-		robot.SecondArm.run_target(50, 90, wait=True)
+		robot.MainArm.run_target(robot.getArmSpeed(), 90, wait=False)
+		robot.SecondArm.run_target(robot.getArmSpeed(), 90, wait=True)
 
 	# Start of rock mission
-	Actions.forward(445)
+	Actions.forward(448)
+
+	if robot.MainArm is not None and robot.SecondArm is not None:
+		robot.MainArm.run_target(robot.getArmSpeed(), 0, wait=False)
+		robot.SecondArm.run_target(robot.getArmSpeed(), 0, wait=True)
+	
+	Actions.backward(448)
 
 	# Drive to mission
 	# Sounds.play_waypoint_ding_dong()
