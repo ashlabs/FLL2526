@@ -26,19 +26,23 @@ def runMain(robot: Robot):
 	if robot.Base is not None:
 		robot.Base.use_gyro(True)
 
-	robot.setSpeed(400)
+	robot.setSpeed(500)
 
 	# Launched with: corner jig
-	Actions.forward(500)
+	Actions.forward(220)
 
 	# Start of root mission
-	Actions.forward(448)
+	Actions.left(45)
+
+	Actions.forward(750)
 
 	if robot.MainArm is not None and robot.SecondArm is not None:
-		robot.MainArm.run_target(robot.getArmSpeed(), 0, wait=False)
-		robot.SecondArm.run_target(robot.getArmSpeed(), 0, wait=True)
+		robot.MainArm.run_target(robot.getArmSpeed() * 1.5, 90, wait=False)
+		robot.SecondArm.run_target(robot.getArmSpeed() * 1.5, 90, wait=True)
 
-	Actions.backward(448)
+	Actions.backward(700)
+
+	Actions.right(45)
 
 	# Drive to mission
 	# Sounds.play_waypoint_ding_dong()
