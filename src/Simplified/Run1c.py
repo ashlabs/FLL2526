@@ -26,6 +26,8 @@ def runMain(robot: Robot):
 	if robot.Base is not None:
 		robot.Base.use_gyro(True)
 
+	robot.setSpeed(400)
+
 	# Launched with: 45 degree jig
 
 	# Drive to mission
@@ -55,39 +57,41 @@ def runMain(robot: Robot):
 
 	Sounds.play_waypoint_ding_dong()
 	if robot.MainArm is not None and robot.SecondArm is not None:
-		robot.MainArm.run_target(55, 100, wait=False)
-		robot.SecondArm.run_target(55, 100, wait=True)
+
+		robot.MainArm.run_target(55, 60, wait=False)
+		robot.SecondArm.run_target(55, 60, wait=True)
 
 		Sounds.play_waypoint_ding_dong()
 
-		Actions.backward(20)
+		if robot.Base is not None:
+			robot.Base.straight(-20, wait=False)
 		
 		Sounds.play_waypoint_ding_dong()
 
-		robot.MainArm.run_target(55, 100, wait=False)
-		robot.SecondArm.run_target(55, 100, wait=True)
+		robot.MainArm.run_target(55, 60, wait=False)
+		robot.SecondArm.run_target(55, 60, wait=True)
 
-	# Sounds.play_waypoint_ding_dong()
-	# robot.runCountdown(length=1, warning=1)
+	Sounds.play_waypoint_ding_dong()
+	robot.runCountdown(length=1, warning=1)
 
-	# Sounds.play_waypoint_ding_dong()
-	# Actions.backward(160)
+	Sounds.play_waypoint_ding_dong()
+	Actions.backward(160)
 	
-	# Sounds.play_waypoint_ding_dong()
-	# if robot.MainArm is not None and robot.SecondArm is not None:
-	# 	robot.MainArm.run_target(55, 0, wait=False)
-	# 	robot.SecondArm.run_target(55, 0, wait=True)
+	Sounds.play_waypoint_ding_dong()
+	if robot.MainArm is not None and robot.SecondArm is not None:
+		robot.MainArm.run_target(55, 0, wait=False)
+		robot.SecondArm.run_target(55, 0, wait=True)
 
 	robot.reset()
 	wait(100)
 
 	# Go back
 	
-	# Sounds.play_waypoint_ding_dong()
-	# Actions.right(30)
-	# Sounds.play_waypoint_ding_dong()
-	# Actions.backward(700)
-	# Sounds.play_waypoint_ding_dong()
+	Sounds.play_waypoint_ding_dong()
+	Actions.right(30)
+	Sounds.play_waypoint_ding_dong()
+	Actions.backward(700)
+	Sounds.play_waypoint_ding_dong()
 	
 
 if __name__ == "__main__":

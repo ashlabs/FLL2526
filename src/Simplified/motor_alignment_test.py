@@ -41,5 +41,5 @@ def run_test():
 if __name__ == "__main__":
 	LeftDrive = Motor(Port.A)
 	RightDrive = Motor(Port.B, Direction.COUNTERCLOCKWISE)
-	robot = Robot(MainArm=Motor(Port.C), SecondArm=Motor(Port.D, Direction.COUNTERCLOCKWISE), Base=DriveBase(LeftDrive, RightDrive, wheel_diameter=56, axle_track=114), MatColorSensor=ColorSensor(Port.S1), LeftDrive=LeftDrive, RightDrive=RightDrive, DistSensor=UltrasonicSensor(Port.S2))
+	robot = Robot(MainArm=Motor(Port.C), SecondArm=Motor(Port.D, Direction.COUNTERCLOCKWISE), Base=DriveBase(LeftDrive, RightDrive, wheel_diameter=56, axle_track=114), MatColorSensor=None, LeftDrive=LeftDrive, RightDrive=RightDrive, DistSensor=UltrasonicSensor(Port.S2))
 	run_test()
