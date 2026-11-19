@@ -38,7 +38,6 @@ def runMain(robot: Robot):
 	Sounds.play_waypoint_ding_dong()
 	Actions.left(30)
 	Sounds.play_waypoint_ding_dong()
-
 	Actions.forward(80)
 	Sounds.play_waypoint_ding_dong()
 

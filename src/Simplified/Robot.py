@@ -77,3 +77,11 @@ class Robot:
 				self.hub.light.on(Color.ORANGE)
 			wait(1000)
 		self.hub.light.on(Color.GREEN)
+
+	def getSpeed(self) -> int:
+		return self.DriveSpeed
+
+	def setSpeed(self, speed: int):
+		self.DriveSpeed = speed
+		if self.Base is not None:
+			self.Base.settings(straight_speed=speed, straight_acceleration=self.DriveAcceleration, turn_rate=self.TurnSpeed, turn_acceleration=self.TurnAcceleration)
