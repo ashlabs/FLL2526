@@ -2,7 +2,6 @@ from Robot import Robot
 import Robot_config
 import Sounds
 from pybricks.tools import wait
-from pybricks.parameters import Color
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # To make the robot move forward, you can use Actions.forward(distance).

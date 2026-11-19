@@ -2,7 +2,6 @@ from Robot import Robot
 import Robot_config
 import Sounds
 from pybricks.tools import wait
-from pybricks.parameters import Color
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # To make the robot move forward, you can use Actions.forward(distance).
@@ -26,7 +25,7 @@ def runMain(robot: Robot):
 	if robot.Base is not None:
 		robot.Base.use_gyro(True)
 
-	robot.setSpeed(500)
+	robot.setSpeed(550)
 
 	# Launched with: corner jig
 	Actions.forward(220)
@@ -34,15 +33,27 @@ def runMain(robot: Robot):
 	# Start of root mission
 	Actions.left(45)
 
-	Actions.forward(750)
+	Actions.forward(700)
 
 	if robot.MainArm is not None and robot.SecondArm is not None:
-		robot.MainArm.run_target(robot.getArmSpeed() * 1.5, 90, wait=False)
-		robot.SecondArm.run_target(robot.getArmSpeed() * 1.5, 90, wait=True)
+		robot.MainArm.run_target(robot.getArmSpeed() * 3, 80, wait=False)
+		robot.SecondArm.run_target(robot.getArmSpeed() * 3, 80, wait=True)
 
-	Actions.backward(700)
+		Actions.backward(40)
+
+		robot.MainArm.run_target(robot.getArmSpeed() * 3, 0, wait=False)
+		robot.SecondArm.run_target(robot.getArmSpeed() * 3, 0, wait=True)
+
+		Actions.forward(60)
+		
+		robot.MainArm.run_target(robot.getArmSpeed() * 3, 100, wait=False)
+		robot.SecondArm.run_target(robot.getArmSpeed() * 3, 100, wait=True)
+
+	Actions.backward(680)
 
 	Actions.right(45)
+
+	Actions.backward(220)
 
 	# Drive to mission
 	# Sounds.play_waypoint_ding_dong()
