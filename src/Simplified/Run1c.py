@@ -55,21 +55,21 @@ def runMain(robot: Robot):
 
 	# Do mission
 
-	Sounds.play_waypoint_ding_dong()
-	if robot.MainArm is not None and robot.SecondArm is not None:
+	# Sounds.play_waypoint_ding_dong()
+	# if robot.MainArm is not None and robot.SecondArm is not None:
 
-		robot.MainArm.run_target(55, 60, wait=False)
-		robot.SecondArm.run_target(55, 60, wait=True)
+	# 	robot.MainArm.run_target(55, 60, wait=False)
+	# 	robot.SecondArm.run_target(55, 60, wait=True)
 
-		Sounds.play_waypoint_ding_dong()
+	# 	Sounds.play_waypoint_ding_dong()
 
-		if robot.Base is not None:
-			robot.Base.straight(-20, wait=False)
+	# 	if robot.Base is not None:
+	# 		robot.Base.straight(-20, wait=False)
 		
-		Sounds.play_waypoint_ding_dong()
+	# 	Sounds.play_waypoint_ding_dong()
 
-		robot.MainArm.run_target(55, 60, wait=False)
-		robot.SecondArm.run_target(55, 60, wait=True)
+	# 	robot.MainArm.run_target(55, 60, wait=False)
+	# 	robot.SecondArm.run_target(55, 60, wait=True)
 
 	Sounds.play_waypoint_ding_dong()
 	robot.runCountdown(length=1, warning=1)
