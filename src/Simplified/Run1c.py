@@ -88,11 +88,11 @@ def runMain(robot: Robot):
 	# Go back
 	
 	Sounds.play_waypoint_ding_dong()
-	Actions.right(30)
+	Actions.right(32)
 	Sounds.play_waypoint_ding_dong()
 	robot.setSpeed(900)
 	Sounds.play_waypoint_ding_dong()
-	Actions.backward(890)
+	Actions.backward(780)
 	Sounds.play_waypoint_ding_dong()
 	
 
