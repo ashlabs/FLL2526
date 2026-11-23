@@ -26,7 +26,7 @@ def runMain(robot: Robot):
 	if robot.Base is not None:
 		robot.Base.use_gyro(True)
 
-	robot.setSpeed(400)
+	robot.setSpeed(450)
 
 	# Launched with: 45 degree jig
 
@@ -43,14 +43,14 @@ def runMain(robot: Robot):
 	Actions.forward(80)
 	Sounds.play_waypoint_ding_dong()
 
-	if robot.Base is not None and robot.MatColorSensor is not None:
-		robot.Base.drive(100, 0)
-		while robot.MatColorSensor.color() != Color.WHITE:
-			robot.Base.stop()
+	# if robot.Base is not None and robot.MatColorSensor is not None:
+	# 	robot.Base.drive(100, 0)
+	# 	while robot.MatColorSensor.color() != Color.WHITE:
+			# robot.Base.stop()
 		
 	Sounds.play_waypoint_ding_dong()
 
-	Actions.forward(11)
+	Actions.forward(95)
 	Sounds.play_waypoint_ding_dong()
 
 	# Do mission
@@ -90,7 +90,9 @@ def runMain(robot: Robot):
 	Sounds.play_waypoint_ding_dong()
 	Actions.right(30)
 	Sounds.play_waypoint_ding_dong()
-	Actions.backward(700)
+	robot.setSpeed(900)
+	Sounds.play_waypoint_ding_dong()
+	Actions.backward(890)
 	Sounds.play_waypoint_ding_dong()
 	
 
