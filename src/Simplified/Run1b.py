@@ -28,7 +28,7 @@ def runMain(robot: Robot):
 	robot.setSpeed(550)
 
 	# Launched with: corner jig
-	Actions.forward(220)
+	Actions.forward(235)
 
 	# Start of root mission
 	Actions.left(45)
@@ -36,18 +36,21 @@ def runMain(robot: Robot):
 	Actions.forward(700)
 
 	if robot.MainArm is not None and robot.SecondArm is not None:
-		robot.MainArm.run_target(robot.getArmSpeed() * 3, 80, wait=False)
-		robot.SecondArm.run_target(robot.getArmSpeed() * 3, 80, wait=True)
-
-		Actions.backward(40)
-
-		robot.MainArm.run_target(robot.getArmSpeed() * 3, 0, wait=False)
-		robot.SecondArm.run_target(robot.getArmSpeed() * 3, 0, wait=True)
-
-		Actions.forward(60)
-		
 		robot.MainArm.run_target(robot.getArmSpeed() * 3, 100, wait=False)
 		robot.SecondArm.run_target(robot.getArmSpeed() * 3, 100, wait=True)
+
+		Actions.backward(45)
+
+		robot.MainArm.run_target(robot.getArmSpeed() * 3, 25, wait=False)
+		robot.SecondArm.run_target(robot.getArmSpeed() * 3, 25, wait=True)
+
+		Actions.forward(50)
+		
+		robot.MainArm.run_target(robot.getArmSpeed() * 4, 90, wait=False)
+		robot.SecondArm.run_target(robot.getArmSpeed() * 4, 90, wait=True)
+
+		# robot.MainArm.run_target(robot.getArmSpeed() * 3, 0, wait=False)
+		# robot.SecondArm.run_target(robot.getArmSpeed() * 3, 0, wait=True)
 
 	Actions.backward(680)
 

@@ -2,7 +2,6 @@ from Robot import Robot
 import Robot_config
 import Sounds
 from pybricks.tools import wait
-from pybricks.parameters import Color
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # To make the robot move forward, you can use Actions.forward(distance).
@@ -48,9 +47,9 @@ def runMain(robot: Robot):
 	# 	while robot.MatColorSensor.color() != Color.WHITE:
 			# robot.Base.stop()
 		
-	Sounds.play_waypoint_ding_dong()
+	Sounds.play_default_ding_dong()
 
-	Actions.forward(95)
+	Actions.forward(110) # lift up
 	Sounds.play_waypoint_ding_dong()
 
 	# Do mission
