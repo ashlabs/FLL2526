@@ -25,59 +25,56 @@ def runMain(robot: Robot):
 	################################
 	#drone mission
 	################################
-	Actions.forward(990)
-	Actions.backward(900)
-	wait(7000)
+	# print(robot.MainArm.angle())
+
+	# wait(7000)
+	# Actions.forward(990)
+	# Actions.backward(900)
+	# wait(7000)
 	runs = [1,2]
 
 	################################
 	#first two reps of flying seeds
 	################################
-	wait(20000)
-	Actions.forward(415)
-	for i in range(len(runs)): 
-		robot.MainArm.run_angle(500,20)
+	# robot.MainArm.run_target(500, -43)
+	
+	# Actions.forward(415)
+	# for i in range(len(runs)): 
+	# 	robot.MainArm.run_angle(500,20)
 
-		Actions.backward(30)
+	# 	Actions.backward(30)
 
-		robot.MainArm.run_angle(500, 15)
+	# 	robot.MainArm.run_angle(500, 15)
 
-		Actions.backward(50)
+	# 	Actions.backward(50)
 
-		robot.MainArm.run_angle(500, -35)
+	# 	robot.MainArm.run_angle(500, -35)
 
-		Actions.forward(80)
+	# 	Actions.forward(80)
 
 	################################
 	#Doing last rep of flying seeds	
 	################################
-	robot.MainArm.run_angle(500,20)
+	# robot.MainArm.run_angle(500,20)
 	
-	Actions.backward(30)
+	# Actions.backward(30)
 	
-	robot.MainArm.run_angle(500, 15)
+	# robot.MainArm.run_angle(500, 15)
 	
-	Actions.backward(50)
+	# Actions.backward(50)
 	
-	robot.MainArm.run_angle(500, -35)
+	# robot.MainArm.run_angle(500, -35)
 
 
-	Actions.backward(400)
+	# Actions.backward(400)
 
 
+	Actions.forward(800)
+	Actions.left(90)
+	Actions.forward(200)
+	Actions.right(90)
 
-# Part two of the run after exploding seeds
-	# Actions.right(50)
 
-	# Actions.forward(450)
-
-	# Actions.left(90)
-
-	# Actions.forward(150)
-
-	# Actions.right(92)
-
-	robot.MainArm.run_angle(500, -50)
 if __name__ == "__main__":
 	
 	runMain(Robot_config.prepare_robot_object())
