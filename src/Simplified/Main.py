@@ -4,10 +4,12 @@ from BasicSelector import BasicSelector
 import Run1, Run2, Run3, Run4
 
 def main(robot : Robot):
-	RunSelector = BasicSelector([1, 2, 3, 4])
+	RunSelector = BasicSelector(["~", 1, 2, 3, 4], autoAdvance=True)
 	while True:
 		RunSelector.selectNext()
-		if RunSelector.selectedOption ==  1:
+		if RunSelector.selectedOption == "~":
+			return
+		elif RunSelector.selectedOption ==  1:
 			Run1.runMain(robot)
 		elif RunSelector.selectedOption == 2:
 			Run2.runMain(robot)

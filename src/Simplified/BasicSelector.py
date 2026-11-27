@@ -12,11 +12,13 @@ class BasicSelector:
 	currentIndex : int = 0
 	selectedOption : str | int | float | bool | Matrix | None = None
 	displayMultiplier : float = 1
+	AutoAdvance : bool = False
 
-	def __init__(self, options: list[str | int | float | bool | Matrix | None], defaultIndex: int = 0, displayMultiplier : float = 1):
+	def __init__(self, options: list[str | int | float | bool | Matrix | None], defaultIndex: int = 0, displayMultiplier : float = 1, autoAdvance : bool = False):
 		self.options = options
 		self.currentIndex = defaultIndex
 		self.displayMultiplier = displayMultiplier
+		self.AutoAdvance = autoAdvance
 
 	def showCurrentOption(self):
 		selectedOption = self.options[self.currentIndex]
@@ -59,6 +61,8 @@ class BasicSelector:
 		if len(self.options) == 1:
 			print(f"Only one option, selected {self.options[0]}")
 			return self.options[0]
+		if self.AutoAdvance:
+			self.currentIndex += 1
 		self.showCurrentOption()
 		while True:
 			if Button.CENTER in self.hub.buttons.pressed():
