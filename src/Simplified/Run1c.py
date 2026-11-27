@@ -39,8 +39,6 @@ def runMain(robot: Robot):
 	Sounds.play_waypoint_ding_dong()
 	Actions.left(30)
 	Sounds.play_waypoint_ding_dong()
-	Actions.forward(80)
-	Sounds.play_waypoint_ding_dong()
 
 	# if robot.Base is not None and robot.MatColorSensor is not None:
 	# 	robot.Base.drive(100, 0)
@@ -49,7 +47,7 @@ def runMain(robot: Robot):
 		
 	Sounds.play_default_ding_dong()
 
-	Actions.forward(110) # lift up
+	Actions.forward(190) # lift up
 	Sounds.play_waypoint_ding_dong()
 
 	# Do mission
@@ -87,11 +85,11 @@ def runMain(robot: Robot):
 	# Go back
 	
 	Sounds.play_waypoint_ding_dong()
-	Actions.right(32)
+	Actions.right(35)
 	Sounds.play_waypoint_ding_dong()
 	robot.setSpeed(900)
 	Sounds.play_waypoint_ding_dong()
-	Actions.backward(780)
+	Actions.backward(790)
 	Sounds.play_waypoint_ding_dong()
 	
 
