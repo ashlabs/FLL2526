@@ -39,10 +39,18 @@ def runMain(robot: Robot):
 		robot.MainArm.run_target(robot.getArmSpeed(), 0, wait=False)
 		robot.SecondArm.run_target(robot.getArmSpeed(), 0, wait=True)
 
+	Actions.backward(48)
+
+	if robot.MainArm is not None and robot.SecondArm is not None:
+		robot.MainArm.run_target(robot.getArmSpeed(), 0, wait=False)
+		robot.SecondArm.run_target(robot.getArmSpeed(), 0, wait=True)
+
 	robot.setSpeed(600)
 	
-	Actions.backward(448)
-	# Launched with: forward-facing jig
+	Actions.backward(400)
+
+	# Try 2
+	
 	if robot.MainArm is not None and robot.SecondArm is not None:
 			robot.MainArm.run_target(robot.getArmSpeed(), 90, wait=False)
 			robot.SecondArm.run_target(robot.getArmSpeed(), 90, wait=True)
