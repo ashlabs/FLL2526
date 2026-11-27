@@ -41,13 +41,13 @@ def runMain(robot: Robot):
 
 		Actions.backward(45)
 
-		robot.MainArm.run_target(robot.getArmSpeed() * 3, 25, wait=False)
-		robot.SecondArm.run_target(robot.getArmSpeed() * 3, 25, wait=True)
+		robot.MainArm.run_target(robot.getArmSpeed() * 3, 30, wait=False)
+		robot.SecondArm.run_target(robot.getArmSpeed() * 3, 30, wait=True)
 
-		Actions.forward(50)
+		Actions.forward(35)
 		
-		robot.MainArm.run_target(robot.getArmSpeed() * 4, 90, wait=False)
-		robot.SecondArm.run_target(robot.getArmSpeed() * 4, 90, wait=True)
+		robot.MainArm.run_target(robot.getArmSpeed() * 5, 90, wait=False)
+		robot.SecondArm.run_target(robot.getArmSpeed() * 5, 90, wait=True)
 
 		# robot.MainArm.run_target(robot.getArmSpeed() * 3, 0, wait=False)
 		# robot.SecondArm.run_target(robot.getArmSpeed() * 3, 0, wait=True)
