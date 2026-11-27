@@ -55,9 +55,42 @@ def runMain(robot: Robot):
     # if robot.SecondArm is not None:
     #     robot.SecondArm.run_target(50, 45, wait=True)
 
- 
+    # Start run towards mycellium
+    # Arm has to be touching the mat at start
+    # Lift arm to the right height
+    robot.MainArm.run_target(200, 40)
+    # Move forward
     Actions.forward(880)
+    # Flip the mycellium
     robot.MainArm.run_angle(800, 200)
+    # Complete mycellium
+
+    # Backup to head towards leaf cutter
+    Actions.backward(110)
+    # Turn left to head towards leaf cutter
+    Actions.left(90)
+    Actions.forward(400)
+    Actions.left(50)
+    robot.Base.settings(
+        straight_speed=150,         # Slower linear speed (mm/s)
+        straight_acceleration=70,  # Slower acceleration (mm/s²)
+        turn_rate=150,              # Slower turning speed (deg/s)
+        turn_acceleration=125       # Slower turning acceleration (deg/s²)
+    )
+    # Push leaves
+    Actions.backward(138)
+
+    # Start heading toward window to the past 
+    robot.Base.settings(
+        straight_speed=560,         # Slower linear speed (mm/s)
+        straight_acceleration=120,  # Slower acceleration (mm/s²)
+        turn_rate=150,              # Slower turning speed (deg/s)
+        turn_acceleration=125       # Slower turning acceleration (deg/s²)
+    )
+    Actions.forward(28)
+    Actions.left(90)
+    Actions.forward(1100)
+
 
     # assert robot.SecondArm is not None
     # run_arm_angle(robot.SecondArm, 50, 45, wait=True)
@@ -82,11 +115,11 @@ def runMain(robot: Robot):
     #     turn_rate=150,              # Slower turning speed (deg/s)
     #     turn_acceleration=125       # Slower turning acceleration (deg/s²)
     # )
-    #Actions.forward(620)
-    #Actions.left(170)
-    #Actions.forward(250)
-    #Actions.right(45)
-    #Actions.SetRightArm(20)
+    # Actions.forward(620)
+    # Actions.left(170)
+    # Actions.forward(250)
+    # Actions.right(45)
+    # Actions.SetRightArm(20)
    
 if __name__ == "__main__":
     runMain(Robot_config.prepare_robot_object())
