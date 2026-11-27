@@ -59,6 +59,7 @@ class Robot:
 		self.hub.system.set_stop_button(Button.CENTER)
 		self.setSpeed(100)
 		self.setArmSpeed(50)
+		self.setAcceleration(150)
 
 	def MissionDone(self):
 		self.hub.display.icon(Matrix([
@@ -93,3 +94,11 @@ class Robot:
 
 	def setArmSpeed(self, speed: int):
 		self.ArmSpeed = speed
+
+	def getAcceleration(self) -> int:
+		return self.DriveAcceleration
+
+	def setAcceleration(self, acc: int):
+		self.DriveAcceleration = acc
+		if self.Base is not None:
+			self.Base.settings(straight_speed=self.DriveSpeed, straight_acceleration=acc, turn_rate=self.TurnSpeed, turn_acceleration=self.TurnAcceleration)
